@@ -178,3 +178,12 @@ async function renderRequests(){
 
 window.editHorse=editHorse;window.deleteHorse=deleteHorse;window.deleteMedia=deleteMedia;
 initAdmin();
+const leadyMenuBtn = document.getElementById("menuBtn");
+const leadyNav = document.querySelector("header.nav nav");
+
+if(leadyMenuBtn && leadyNav){
+  leadyMenuBtn.addEventListener("click",()=>{
+    leadyNav.style.display =
+      leadyNav.style.display === "flex" ? "none" : "flex";
+  });
+}
