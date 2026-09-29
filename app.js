@@ -108,7 +108,24 @@ async function initAdmin(){
 }
 
 async function previewMedia(){const box=document.getElementById("preview"),files=[...(document.getElementById("media")?.files||[])];box.innerHTML="";for(const f of files){const url=URL.createObjectURL(f);box.insertAdjacentHTML("beforeend",f.type.startsWith("video/")?`<video controls src="${url}"></video>`:`<img src="${url}" alt="Aperçu">`)}}
-function resetForm(){document.getElementById("form")?.reset();document.getElementById("editId").value="";document.getElementById("preview").innerHTML="";document.getElementById("existingMedia").innerHTML="";document.querySelector("#form h3")?.replaceChildren(document.createTextNode("Nouvelle annonce"));window.scrollTo({top:0,behavior:"smooth"})}
+function resetForm(){
+  const form = document.getElementById("form");
+  if(form) form.reset();
+
+  const editId = document.getElementById("editId");
+  if(editId) editId.value = "";
+
+  const preview = document.getElementById("preview");
+  if(preview) preview.innerHTML = "";
+
+  const existingMedia = document.getElementById("existingMedia");
+  if(existingMedia) existingMedia.innerHTML = "";
+
+  const title = document.querySelector("#form h3");
+  if(title) title.textContent = "Nouvelle annonce";
+
+  window.scrollTo({top:0,behavior:"smooth"});
+}
 
 async function saveHorse(e){
  e.preventDefault();
