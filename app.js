@@ -177,7 +177,7 @@ async function renderRequests(){
  const el=document.getElementById("requests");if(!el)return;try{const {data,error}=await sb.from("contact_requests").select("*, horses(name)").order("created_at",{ascending:false});if(error)throw error;el.innerHTML=data?.length?data.map(r=>`<div class="request-item"><strong>${esc(r.name)}</strong><div class="meta">${esc(r.horses?.name||"Demande générale")} · ${new Date(r.created_at).toLocaleString("fr-FR")}</div><div>${esc(r.email)}${r.phone?` · ${esc(r.phone)}`:""}</div><p>${esc(r.message||"")}</p></div>`).join(""):"<p class='meta'>Aucune demande reçue.</p>"}catch(e){console.error(e);el.innerHTML="<p class='error'>Impossible de charger les demandes.</p>"}}
 
 window.editHorse=editHorse;window.deleteHorse=deleteHorse;window.deleteMedia=deleteMedia;
-initAdmin();
+if(document.getElementById("adminList")) initAdmin();
 const leadyMenuBtn = document.getElementById("menuBtn");
 const leadyNav = document.querySelector("header.nav nav");
 
