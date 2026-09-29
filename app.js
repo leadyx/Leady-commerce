@@ -1,12 +1,5 @@
 const KEY="leadyCommerceHorses";
-const DEMO=[
-{id:"neo-du-val",name:"Néo du Val",status:"available",age:8,sex:"Hongre",height:"1,66",breed:"Selle Français",discipline:"CSO",price:12500,location:"Sarthe",summary:"Cheval polyvalent, agréable au quotidien et prêt à évoluer avec son cavalier.",description:"Présentation de démonstration à remplacer par les informations réelles du cheval.\n\nTravail : à compléter.\nCaractère : à compléter.\nInformations santé : à compléter.",contact:"Leady Commerce"},
-{id:"jade-de-lor",name:"Jade de l'Or",status:"available",age:6,sex:"Jument",height:"1,63",breed:"Selle Français",discipline:"Dressage",price:9800,location:"Sarthe",summary:"Jument expressive et proche de l'homme, avec de belles qualités sous la selle.",description:"Fiche de démonstration. Remplacez ce texte par la présentation réelle.",contact:"Leady Commerce"},
-{id:"cosmos",name:"Cosmos",status:"available",age:12,sex:"Hongre",height:"1,68",breed:"ONC",discipline:"Loisir",price:6500,location:"Sarthe",summary:"Cheval expérimenté, gentil et adapté à une recherche de compagnon polyvalent.",description:"Fiche de démonstration. Remplacez ce texte par la présentation réelle.",contact:"Leady Commerce"},
-{id:"vasco-des-pres",name:"Vasco des Prés",status:"reserved",age:5,sex:"Hongre",height:"1,65",breed:"Selle Français",discipline:"CSO",price:15000,location:"Sarthe",summary:"Jeune cheval avec de l'énergie et du potentiel, à poursuivre dans son travail.",description:"Fiche de démonstration. Remplacez ce texte par la présentation réelle.",contact:"Leady Commerce"},
-{id:"etoile",name:"Étoile",status:"available",age:10,sex:"Jument",height:"1,64",breed:"SF",discipline:"Complet",price:11000,location:"Sarthe",summary:"Jument régulière et volontaire, présentée dans une démarche sportive et loisir.",description:"Fiche de démonstration. Remplacez ce texte par la présentation réelle.",contact:"Leady Commerce"},
-{id:"rio",name:"Rio",status:"sold",age:14,sex:"Hongre",height:"1,67",breed:"ONC",discipline:"Loisir",price:7200,location:"Sarthe",summary:"Cheval posé et expérimenté, recherchant une nouvelle famille.",description:"Annonce de démonstration vendue.",contact:"Leady Commerce"}
-];
+const DEMO=[];
 
 function getHorses(){return JSON.parse(localStorage.getItem(KEY)||"[]").concat(DEMO)}
 function saveCustom(arr){localStorage.setItem(KEY,JSON.stringify(arr))}
