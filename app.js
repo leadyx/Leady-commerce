@@ -109,8 +109,22 @@ async function initAdmin(){
 
 async function previewMedia(){const box=document.getElementById("preview"),files=[...(document.getElementById("media")?.files||[])];box.innerHTML="";for(const f of files){const url=URL.createObjectURL(f);box.insertAdjacentHTML("beforeend",f.type.startsWith("video/")?`<video controls src="${url}"></video>`:`<img src="${url}" alt="Aperçu">`)}}
 function resetForm(){
-const form = document.querySelector("form");
-if(form) form.reset();
+  const fields = [
+    "name","age","breed","origins","character",
+    "location","summary","description","level",
+    "health","discipline","price"
+  ];
+
+  fields.forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.value = "";
+  });
+
+  const status = document.getElementById("status");
+  if(status) status.value = "available";
+
+  const sex = document.getElementById("sex");
+  if(sex) sex.value = "";
 
   const editId = document.getElementById("editId");
   if(editId) editId.value = "";
@@ -126,7 +140,6 @@ if(form) form.reset();
 
   window.scrollTo({top:0,behavior:"smooth"});
 }
-
 async function saveHorse(e){
  e.preventDefault();
  const btn=e.submitter;btn.disabled=true;btn.textContent="Enregistrement…";
