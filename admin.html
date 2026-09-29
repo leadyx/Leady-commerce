@@ -4,28 +4,26 @@
 <body>
 <header class="nav"><a href="index.html" class="brand"><img src="logo-leady.jpg" alt="Leady"></a><a href="index.html" class="back">← Voir le carnet</a></header>
 <main class="admin wrap">
-<div id="loginBox" class="panel login"><span class="kicker">ACCÈS PRIVÉ</span><h1>Espace gestion</h1><p>Cette version locale protège l’interface par un code. Pour une mise en ligne multi-appareils, voir le guide.</p>
-<label>Code d’accès<input id="pass" type="password" placeholder="Code"></label><button id="login" class="btn">Entrer</button><p id="loginMsg" class="error"></p></div>
-
+<div id="loginBox" class="panel login"><span class="kicker">ACCÈS PRIVÉ</span><h1>Espace gestion</h1><p>Connectez-vous avec le compte administrateur créé dans Supabase.</p>
+<label>E-mail<input id="email" type="email" autocomplete="username" placeholder="Votre e-mail" required></label><label>Mot de passe<input id="pass" type="password" autocomplete="current-password" placeholder="Votre mot de passe" required></label><button id="login" class="btn">Se connecter</button><p id="loginMsg" class="error"></p></div>
 <div id="adminApp" hidden>
 <div class="heading-row"><div><span class="kicker">LEADY COMMERCE</span><h1>Gestion des annonces</h1></div><button id="logout" class="outline">Se déconnecter</button></div>
 <div class="admin-layout">
-<section class="panel"><h2>Nouvelle annonce</h2>
-<form id="form">
-<input type="hidden" id="editId">
-<div class="two"><label>Nom *<input id="name" required></label><label>Statut<select id="status"><option value="available">Disponible</option><option value="sold">Vendu</option><option value="reserved">Réservé</option></select></label></div>
-<div class="three"><label>Âge<input id="age" type="number" min="0"></label><label>Sexe<select id="sex"><option>Jument</option><option>Hongre</option><option>Étalon</option></select></label><label>Taille (m)<input id="height" placeholder="1,65"></label></div>
+<section class="panel"><h2>Annonce</h2>
+<form id="form"><input type="hidden" id="editId">
+<div class="two"><label>Nom *<input id="name" required></label><label>Statut<select id="status"><option value="available">Disponible</option><option value="reserved">Réservé</option><option value="sold">Vendu</option></select></label></div>
+<div class="three"><label>Âge<input id="age" type="number" min="0"></label><label>Sexe<select id="sex"><option value="Jument">Jument</option><option value="Hongre">Hongre</option><option value="Étalon">Étalon</option></select></label><label>Taille (m)<input id="height" placeholder="1,65"></label></div>
 <div class="three"><label>Race<input id="breed" placeholder="Selle Français"></label><label>Discipline<input id="discipline" placeholder="CSO"></label><label>Prix (€)<input id="price" type="number" min="0"></label></div>
+<div class="two"><label>Origines<input id="origins"></label><label>Niveau<input id="level" placeholder="Galop 4, amateur…"></label></div>
+<div class="two"><label>Caractère<input id="character"></label><label>Santé<input id="health" placeholder="Informations importantes"></label></div>
 <label>Localisation<input id="location" placeholder="Département / ville"></label>
 <label>Accroche<textarea id="summary" rows="3" placeholder="Présentation courte"></textarea></label>
-<label>Présentation complète<textarea id="description" rows="7" placeholder="Caractère, travail, niveau, informations importantes…"></textarea></label>
-<label>Contact<input id="contact" placeholder="Téléphone ou e-mail"></label>
-<label>Photo principale<input id="photo" type="file" accept="image/*"></label>
-<div id="preview" class="upload-preview"></div>
+<label>Présentation complète<textarea id="description" rows="8" placeholder="Caractère, travail, niveau, informations importantes…"></textarea></label>
+<label>Photos / vidéos<input id="media" type="file" accept="image/*,video/*" multiple></label>
+<div id="preview" class="upload-preview"></div><div id="existingMedia" class="existing-media-grid"></div>
 <div class="actions"><button class="btn" type="submit">Enregistrer l’annonce</button><button class="outline" type="button" id="reset">Nouveau</button></div>
 </form></section>
-<section class="panel"><h2>Annonces</h2><div id="adminList"></div></section>
-</div>
-</div>
+<section class="panel"><h2>Annonces</h2><div id="adminList"></div><h2 class="requests-title">Demandes de contact</h2><div id="requests"></div></section>
+</div></div>
 </main>
-<script src="app.js"></script></body></html>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="app.js"></script></body></html>
