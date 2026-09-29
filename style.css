@@ -60,11 +60,11 @@ footer{padding:35px 5%;background:#292522;color:#fff;text-align:center;font-size
   width:180px;
   height:130px;
   object-fit:cover;
-  border-radius:10px;
+  border-radius:
 }
 .detail-grid img{
   width:100%;
-  height:380px;
-  object-fit:cover;
+  height:220px;
+  object-fit:contain;
   display:block;
 }
