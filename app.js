@@ -178,3 +178,12 @@ async function renderRequests(){
 
 window.editHorse=editHorse;window.deleteHorse=deleteHorse;window.deleteMedia=deleteMedia;
 initAdmin();
+const menuBtn = document.getElementById("menuBtn");
+const siteNav = document.querySelector("header.nav nav");
+
+if(menuBtn && siteNav){
+  menuBtn.addEventListener("click",()=>{
+    siteNav.style.display =
+      siteNav.style.display === "flex" ? "none" : "flex";
+  });
+}
