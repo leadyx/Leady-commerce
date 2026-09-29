@@ -179,11 +179,10 @@ async function renderRequests(){
 window.editHorse=editHorse;window.deleteHorse=deleteHorse;window.deleteMedia=deleteMedia;
 initAdmin();
 const menuBtn = document.getElementById("menuBtn");
-const siteNav = document.querySelector("header.nav nav");
+const nav = document.querySelector(".nav");
 
-if(menuBtn && siteNav){
+if(menuBtn && nav){
   menuBtn.addEventListener("click",()=>{
-    siteNav.style.display =
-      siteNav.style.display === "flex" ? "none" : "flex";
+    nav.classList.toggle("nav-open");
   });
 }
