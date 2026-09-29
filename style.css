@@ -62,11 +62,9 @@ footer{padding:35px 5%;background:#292522;color:#fff;text-align:center;font-size
   object-fit:cover;
   border-radius:10px;
 }
-.detail-grid img,
-.detail-photo img,
-.detail-hero img{
+.detail-grid img{
   width:100%;
-  max-height:500px;
+  height:380px;
   object-fit:cover;
   display:block;
 }
