@@ -109,8 +109,8 @@ async function initAdmin(){
 
 async function previewMedia(){const box=document.getElementById("preview"),files=[...(document.getElementById("media")?.files||[])];box.innerHTML="";for(const f of files){const url=URL.createObjectURL(f);box.insertAdjacentHTML("beforeend",f.type.startsWith("video/")?`<video controls src="${url}"></video>`:`<img src="${url}" alt="Aperçu">`)}}
 function resetForm(){
-  const form = document.getElementById("form");
-  if(form) form.reset();
+const form = document.querySelector("form");
+if(form) form.reset();
 
   const editId = document.getElementById("editId");
   if(editId) editId.value = "";
