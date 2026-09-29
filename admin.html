@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gestion — Leady Commerce</title><link rel="icon" href="logo-leady.jpg"><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="nav"><a href="index.html" class="brand"><img src="logo-leady.jpg" alt="Leady"></a><a href="index.html" class="back">← Voir le carnet</a></header>
+<main class="admin wrap">
+<div id="loginBox" class="panel login"><span class="kicker">ACCÈS PRIVÉ</span><h1>Espace gestion</h1><p>Cette version locale protège l’interface par un code. Pour une mise en ligne multi-appareils, voir le guide.</p>
+<label>Code d’accès<input id="pass" type="password" placeholder="Code"></label><button id="login" class="btn">Entrer</button><p id="loginMsg" class="error"></p></div>
+
+<div id="adminApp" hidden>
+<div class="heading-row"><div><span class="kicker">LEADY COMMERCE</span><h1>Gestion des annonces</h1></div><button id="logout" class="outline">Se déconnecter</button></div>
+<div class="admin-layout">
+<section class="panel"><h2>Nouvelle annonce</h2>
+<form id="form">
+<input type="hidden" id="editId">
+<div class="two"><label>Nom *<input id="name" required></label><label>Statut<select id="status"><option value="available">Disponible</option><option value="sold">Vendu</option><option value="reserved">Réservé</option></select></label></div>
+<div class="three"><label>Âge<input id="age" type="number" min="0"></label><label>Sexe<select id="sex"><option>Jument</option><option>Hongre</option><option>Étalon</option></select></label><label>Taille (m)<input id="height" placeholder="1,65"></label></div>
+<div class="three"><label>Race<input id="breed" placeholder="Selle Français"></label><label>Discipline<input id="discipline" placeholder="CSO"></label><label>Prix (€)<input id="price" type="number" min="0"></label></div>
+<label>Localisation<input id="location" placeholder="Département / ville"></label>
+<label>Accroche<textarea id="summary" rows="3" placeholder="Présentation courte"></textarea></label>
+<label>Présentation complète<textarea id="description" rows="7" placeholder="Caractère, travail, niveau, informations importantes…"></textarea></label>
+<label>Contact<input id="contact" placeholder="Téléphone ou e-mail"></label>
+<label>Photo principale<input id="photo" type="file" accept="image/*"></label>
+<div id="preview" class="upload-preview"></div>
+<div class="actions"><button class="btn" type="submit">Enregistrer l’annonce</button><button class="outline" type="button" id="reset">Nouveau</button></div>
+</form></section>
+<section class="panel"><h2>Annonces</h2><div id="adminList"></div></section>
+</div>
+</div>
+</main>
+<script src="app.js"></script></body></html>

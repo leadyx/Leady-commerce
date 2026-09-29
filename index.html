@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#b99a72"><meta name="description" content="Leady Commerce — carnet de vente de chevaux.">
+<title>Leady Commerce — Chevaux à vendre</title>
+<link rel="icon" href="logo-leady.jpg"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="toast" class="toast"></div>
+<header class="nav">
+  <a href="index.html" class="brand"><img src="logo-leady.jpg" alt="Leady"></a>
+  <nav><a href="#catalogue">Chevaux</a><a href="#leady">Leady Commerce</a><a href="admin.html" class="nav-admin">Espace gestion</a></nav>
+  <button class="menu" id="menuBtn">☰</button>
+</header>
+
+<section class="hero">
+  <div class="hero-copy">
+    <span class="kicker">LEADY COMMERCE</span>
+    <h1>Trouvez le cheval<br><i>qui vous correspond.</i></h1>
+    <p>Un carnet de vente pensé pour présenter chaque cheval avec transparence, élégance et toutes les informations utiles.</p>
+    <a class="btn" href="#catalogue">Voir les chevaux</a>
+  </div>
+</section>
+
+<section id="catalogue" class="catalogue wrap">
+  <div class="heading-row">
+    <div><span class="kicker">LA SÉLECTION</span><h2>Chevaux à vendre</h2></div>
+    <button id="favOnly" class="outline">♡ Mes favoris <span id="favCount">0</span></button>
+  </div>
+  <div class="filters">
+    <label>Recherche<input id="q" type="search" placeholder="Nom, discipline…"></label>
+    <label>Discipline<select id="discipline"><option value="">Toutes</option><option>CSO</option><option>Dressage</option><option>Complet</option><option>Loisir</option><option>Élevage</option></select></label>
+    <label>Sexe<select id="sex"><option value="">Tous</option><option>Jument</option><option>Hongre</option><option>Étalon</option></select></label>
+    <label>Âge<select id="age"><option value="">Tous</option><option value="0-5">0–5 ans</option><option value="6-10">6–10 ans</option><option value="11+">11 ans et +</option></select></label>
+    <label>Tri<select id="sort"><option value="recent">Plus récents</option><option value="priceAsc">Prix croissant</option><option value="priceDesc">Prix décroissant</option></select></label>
+  </div>
+  <div id="grid" class="horse-grid"></div>
+  <div id="empty" class="empty" hidden>Aucun cheval ne correspond à votre recherche.</div>
+</section>
+
+<section id="leady" class="about">
+  <div class="wrap about-grid">
+    <div><span class="kicker">LEADY COMMERCE</span><h2>Une présentation claire pour une rencontre importante.</h2></div>
+    <div><p>Leady Commerce est l’extension commerciale de Leady Training. Chaque cheval dispose de sa propre fiche afin de présenter son profil, son travail, ses qualités, ses informations pratiques et les modalités de contact.</p><p>Les annonces peuvent être mises à jour, partagées directement et retirées lorsqu’un cheval est vendu.</p></div>
+  </div>
+</section>
+
+<footer><img src="logo-leady.jpg" alt="Leady"><div>LEADY COMMERCE · CARNET DE VENTE DE CHEVAUX</div><a href="admin.html">Gestion</a></footer>
+<script src="app.js"></script>
+</body></html>
