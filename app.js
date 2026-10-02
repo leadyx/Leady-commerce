@@ -39,7 +39,7 @@ async function renderHome(){
   const all=await fetchHorses();
   let list=all;
   const q=(document.getElementById("q")?.value||"").toLowerCase(),d=document.getElementById("discipline")?.value||"",s=document.getElementById("sex")?.value||"",a=document.getElementById("age")?.value||"",sort=document.getElementById("sort")?.value||"recent";
-  list=list.filter(h=>`${h.name} ${h.discipline||""} ${h.breed||""} ${h.location||""}`.toLowerCase().includes(q)&&(!d||h.discipline===d)&&(!s||h.sex===s)&&(!a||(a==="0-5"&&h.age<=5)||(a==="6-10"&&h.age>=6&&h.age<=10)||(a==="11+"&&h.age>=11)));
+  const sort=document.getElementById("sort")?.value||"";list=list.filter(h=>`${h.name} ${h.discipline||""} ${h.breed||""} ${h.location||""}`.toLowerCase().includes(q)&&(!d||h.discipline===d)&&(!s||h.sex===s)&&(!a||(a==="0-5"&&h.age<=5)||(a==="6-10"&&h.age>=6&&h.age<=10)||(a==="11+"&&h.age>=11)));
   if(window.onlyFav)list=list.filter(h=>favs().includes(h.id));
   if(sort==="priceAsc")list.sort((x,y)=>(x.price||0)-(y.price||0));
   if(sort==="priceDesc")list.sort((x,y)=>(y.price||0)-(x.price||0));
