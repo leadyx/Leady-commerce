@@ -47,7 +47,10 @@ async function renderHome(){
   const empty=document.getElementById("empty");if(empty)empty.hidden=!!list.length;
   const fc=document.getElementById("favCount");if(fc)fc.textContent=favs().length;
   grid.querySelectorAll("[data-fav]").forEach(b=>b.onclick=()=>{toggleFav(b.dataset.fav);renderHome()});
-}catch(e){console.error(e);grid.innerHTML=`<div class="empty">ERREUR : ${e.message||e}</div>`}
+catch(e){
+  console.error(e);
+  grid.innerHTML=`<div class="empty">ERREUR : ${e.message||e}</div>`;
+}
 
 if(document.getElementById("grid")){
  ["q","discipline","sex","age","sort"].forEach(id=>document.getElementById(id)?.addEventListener("input",renderHome));
