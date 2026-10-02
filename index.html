@@ -49,7 +49,19 @@
 <footer><img src="logo-leady.jpg" alt="Leady"><div>LEADY COMMERCE · CARNET DE VENTE DE CHEVAUX</div><a href="admin.html">Gestion</a></footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="app.js?v=7"></script>
 <script>
-alert("APP JS CHARGE");
+alert("APP JS CHARGE");</script>
+  <script>
+fetch("app.js?v=7")
+  .then(r => r.text())
+  .then(code => {
+    try {
+      new Function(code);
+      alert("APP JS : CODE VALIDE");
+    } catch(e) {
+      alert("ERREUR APP.JS : " + e.message);
+    }
+  })
+  .catch(e => alert("ERREUR CHARGEMENT : " + e.message));
 </script>
   <script>alert("APP OK");</script>
 </body>
