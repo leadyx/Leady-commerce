@@ -1,6 +1,8 @@
+alert("DEBUT APP");
 /* Leady Commerce — production Supabase version */
 const SUPABASE_URL = "https://mvexjrfjrzwxbrtsxujo.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_L3wcqYX1tnCSQf3N7pndoQ_wPF-enzk";
+alert("SUPABASE OK");
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 
 const FAV_KEY = "leadyFavs";
